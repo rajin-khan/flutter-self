@@ -4,7 +4,7 @@
 
 ![Profile banner](https://i.imgur.com/ygFxqFu.png)
 
-<h6 align="center">This repository is part of a <a href="https://github.com/rajin-khan/capstone-sem-8" target="_blank" rel="noreferrer">bigger project</a>, with a fixed time frame to learn mobile development with Flutter.</h6>
+<h6 align="center">This repository is part of a <a href="https://github.com/rajin-khan/capstone-sem-8" target="_blank" rel="noreferrer">bigger project</a>, with a fixed time frame to learn mobile app development with Flutter.</h6>
 
 ---
 
