@@ -21,10 +21,10 @@ class MyApp extends StatelessWidget {
         body: Container(
           width: double.infinity,
           padding: const EdgeInsets.all(12),
-          child: Column(
+          child: const Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: const [
+            children:  [
               Text(
                 'Flutter - The Complete Guide',
                 textAlign: TextAlign.center,
