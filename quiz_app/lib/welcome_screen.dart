@@ -28,7 +28,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           'Learn Flutter the Fun Way!',
           style: TextStyle(
             color: Colors.grey.shade200,
-            fontSize: 26,
+            fontSize: 25,
             fontWeight: FontWeight.bold,
           ),
         ),
