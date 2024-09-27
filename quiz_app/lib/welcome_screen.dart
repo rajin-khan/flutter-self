@@ -16,34 +16,36 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
   @override
   Widget build(context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Image.asset(
-          'assets/images/quiz-logo.png',
-          width: 200,
-        ),
-        const SizedBox(height: 35),
-        Text(
-          'Learn Flutter the Fun Way!',
-          style: TextStyle(
-            color: Colors.grey.shade200,
-            fontSize: 25,
-            fontWeight: FontWeight.bold,
+    return Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Image.asset(
+            'assets/images/quiz-logo.png',
+            width: 200,
           ),
-        ),
-        const SizedBox(height: 20),
-        OutlinedButton(
-          onPressed: changeScreen,
-          style: OutlinedButton.styleFrom(
-            foregroundColor: Colors.white,
-            textStyle: const TextStyle(
-              fontSize: 18,
+          const SizedBox(height: 35),
+          Text(
+            'Learn Flutter the Fun Way!',
+            style: TextStyle(
+              color: Colors.grey.shade200,
+              fontSize: 25,
+              fontWeight: FontWeight.bold,
             ),
           ),
-          child: const Text('Start Quiz!'),
-        ),
-      ],
+          const SizedBox(height: 20),
+          OutlinedButton(
+            onPressed: changeScreen,
+            style: OutlinedButton.styleFrom(
+              foregroundColor: Colors.white,
+              textStyle: const TextStyle(
+                fontSize: 18,
+              ),
+            ),
+            child: const Text('Start Quiz!'),
+          ),
+        ],
+      ),
     );
   }
 }
