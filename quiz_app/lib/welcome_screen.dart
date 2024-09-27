@@ -1,18 +1,9 @@
 import 'package:flutter/material.dart';
 
-class WelcomeScreen extends StatefulWidget {
-  const WelcomeScreen({super.key});
+class WelcomeScreen extends StatelessWidget {
+  const WelcomeScreen(this.startQuiz, {super.key});
 
-  @override
-  State<WelcomeScreen> createState() {
-    return _WelcomeScreenState();
-  }
-}
-
-class _WelcomeScreenState extends State<WelcomeScreen> {
-  void changeScreen() {
-    setState(() {});
-  }
+  final void Function() startQuiz;
 
   @override
   Widget build(context) {
@@ -36,7 +27,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           ),
           const SizedBox(height: 20),
           OutlinedButton.icon(
-            onPressed: changeScreen,
+            onPressed: startQuiz,
             style: OutlinedButton.styleFrom(
               foregroundColor: Colors.white,
               textStyle: const TextStyle(
