@@ -34,7 +34,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             ),
           ),
           const SizedBox(height: 20),
-          OutlinedButton(
+          OutlinedButton.icon(
             onPressed: changeScreen,
             style: OutlinedButton.styleFrom(
               foregroundColor: Colors.white,
@@ -42,7 +42,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 fontSize: 18,
               ),
             ),
-            child: const Text('Start Quiz!'),
+            icon: const Icon(Icons.double_arrow_rounded),
+            label: const Text('Start Quiz!'),
           ),
         ],
       ),
