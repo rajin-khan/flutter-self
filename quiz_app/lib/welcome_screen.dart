@@ -23,12 +23,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           Image.asset(
             'assets/images/quiz-logo.png',
             width: 200,
+            color: const Color.fromARGB(175, 255, 255, 255),
           ),
           const SizedBox(height: 35),
           Text(
             'Learn Flutter the Fun Way!',
             style: TextStyle(
-              color: Colors.grey.shade200,
+              color: Colors.grey.shade100,
               fontSize: 25,
               fontWeight: FontWeight.bold,
             ),
