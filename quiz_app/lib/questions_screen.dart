@@ -18,20 +18,25 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
     return SizedBox(
       //you could have wrapped the column with center and set the main axis size to min, but this is an alternate way to do it.
       width: double.infinity, //the sizedbox takes up all the available width
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            currentQuestion.text,
-            style: const TextStyle(
-              color: Colors.white,
+      child: Container(
+        margin: const EdgeInsets.all(40),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              currentQuestion.text,
+              style: const TextStyle(
+                color: Colors.white,
+              ),
+              textAlign: TextAlign.center,
             ),
-          ),
-          const SizedBox(height: 30),
-          ...currentQuestion.answers.map((answer) {
-            return AnswerButton(answer, () {});
-          })
-        ],
+            const SizedBox(height: 30),
+            ...currentQuestion.getShuffledAnswers().map((answer) {
+              return AnswerButton(answer, () {});
+            })
+          ],
+        ),
       ),
     );
   }
