@@ -92,7 +92,7 @@ The repository is organized in terms of the apps created while learning the core
 
 - [X] Introduction
 - [X] Flutter & Dart Basics I - Getting a Solid Foundation [DICE ROLLER APP]
-- [ ] Flutter & Dart Basics II - Fundamentals Deep Dive [QUIZ APP]
+- [X] Flutter & Dart Basics II - Fundamentals Deep Dive [QUIZ APP]
 - [ ] Debugging Flutter Apps
 - [ ] Adding Interactivity, More Widgets & Theming [EXPENSE TRACKER APP]
 - [ ] Building Responsive & Adaptive User Interfaces [EXPENSE TRACKER APP]
