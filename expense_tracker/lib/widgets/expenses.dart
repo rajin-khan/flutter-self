@@ -25,13 +25,28 @@ class _ExpensesState extends State<Expenses> {
         category: Category.leisure),
   ];
 
+  void _openAddExpenseOverlay () {
+
+    
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Rajin\'sExpense Tracker'),
+        actions: [
+          IconButton(
+            onPressed: _openAddExpenseOverlay, //we don't add parentheses here because flutter needs to execute this function only when pressed, not all the time.
+            icon: const Icon(Icons.add_circle),
+          ),
+        ],
+      ),
       body: Column(
         children: [
           const Text('Chart'),
-          Expanded( //the expanded widget must be used here we are trying to display a list (listview) inside another list (the column widget)
+          Expanded(
+            //the expanded widget must be used here we are trying to display a list (listview) inside another list (the column widget)
             child: ExpensesList(expenses: _registeredExpenses),
           ),
         ],
