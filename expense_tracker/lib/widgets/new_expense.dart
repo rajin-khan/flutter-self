@@ -49,7 +49,7 @@ class _NewExpenseState extends State<NewExpense> {
             children: [
               TextButton(
                 onPressed: () {
-                  Navigator.pop(context);
+                  Navigator.pop(context); //closes currently open menu and revers to last one
                 },
                 child: const Text('Cancel'),
               ),
