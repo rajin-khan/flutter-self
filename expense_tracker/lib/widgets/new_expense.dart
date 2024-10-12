@@ -41,12 +41,13 @@ class _NewExpenseState extends State<NewExpense> {
             controller: _amountController,
             keyboardType: TextInputType.number,
             decoration: const InputDecoration(
+              prefix: Text('\$ '), //comes before the input
               label: Text('Amount'),
             ),
           ),
           Row(
             children: [
-              ElevatedButton(
+              TextButton(
                 onPressed: () {},
                 child: const Text('Cancel'),
               ),
