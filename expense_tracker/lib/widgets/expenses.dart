@@ -1,3 +1,4 @@
+import 'package:expense_tracker/widgets/new_expense.dart';
 import 'package:flutter/material.dart';
 
 import 'package:expense_tracker/models/expense.dart';
@@ -28,7 +29,7 @@ class _ExpensesState extends State<Expenses> {
   void _openAddExpenseOverlay() {
     showModalBottomSheet(
       context: context,
-      builder: (ctx) => const Text('Modal Bottom Sheet'),
+      builder: (ctx) => const NewExpense(),
     ); //ctx is the same as context, we just used it to differentiate the two contexts.
   }
 
@@ -36,7 +37,7 @@ class _ExpensesState extends State<Expenses> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Rajin\'sExpense Tracker'),
+        title: const Text('Rajin\'s Expense Tracker'),
         actions: [
           IconButton(
             onPressed:
