@@ -25,9 +25,11 @@ class _ExpensesState extends State<Expenses> {
         category: Category.leisure),
   ];
 
-  void _openAddExpenseOverlay () {
-
-    
+  void _openAddExpenseOverlay() {
+    showModalBottomSheet(
+      context: context,
+      builder: (ctx) => const Text('Modal Bottom Sheet'),
+    ); //ctx is the same as context, we just used it to differentiate the two contexts.
   }
 
   @override
@@ -37,7 +39,8 @@ class _ExpensesState extends State<Expenses> {
         title: const Text('Rajin\'sExpense Tracker'),
         actions: [
           IconButton(
-            onPressed: _openAddExpenseOverlay, //we don't add parentheses here because flutter needs to execute this function only when pressed, not all the time.
+            onPressed:
+                _openAddExpenseOverlay, //we don't add parentheses here because flutter needs to execute this function only when pressed, not all the time.
             icon: const Icon(Icons.add_circle),
           ),
         ],
