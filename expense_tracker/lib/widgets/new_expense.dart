@@ -37,19 +37,38 @@ class _NewExpenseState extends State<NewExpense> {
               label: Text('Title'),
             ),
           ),
-          TextField(
-            controller: _amountController,
-            keyboardType: TextInputType.number,
-            decoration: const InputDecoration(
-              prefix: Text('\$ '), //comes before the input
-              label: Text('Amount'),
-            ),
+          Row(
+            children: [
+              Expanded(
+                child: TextField(
+                  controller: _amountController,
+                  keyboardType: TextInputType.number,
+                  decoration: const InputDecoration(
+                    prefix: Text('\$ '), //comes before the input
+                    label: Text('Amount'),
+                  ),
+                ),
+              ),
+              const SizedBox(width: 16),
+              Expanded(
+                child: Row(
+                  children: [
+                    const Text('Selected Date'),
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(Icons.calendar_month_rounded),
+                    )
+                  ],
+                ),
+              ),
+            ],
           ),
           Row(
             children: [
               TextButton(
                 onPressed: () {
-                  Navigator.pop(context); //closes currently open menu and revers to last one
+                  Navigator.pop(
+                      context); //closes currently open menu and revers to last one
                 },
                 child: const Text('Cancel'),
               ),
