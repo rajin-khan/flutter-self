@@ -18,12 +18,12 @@ class _ExpensesState extends State<Expenses> {
         title: 'Flutter Course',
         amount: 19.99,
         date: DateTime.now(),
-        category: Category.work),
+        category: Cat.work),
     Expense(
         title: 'Movie',
         amount: 17.49,
         date: DateTime.now(),
-        category: Category.leisure),
+        category: Cat.leisure),
   ];
 
   void _openAddExpenseOverlay() {

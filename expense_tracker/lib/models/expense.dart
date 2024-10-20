@@ -6,13 +6,13 @@ final formatter = DateFormat.yMd(); //one of the many formats for dates
 
 const uuid = Uuid(); //unique id object created with its constructor.
 
-enum Category { food, travel, leisure, work }
+enum Cat { food, travel, leisure, work }
 
 const categoryIcons = {
-  Category.food: Icons.ramen_dining_rounded,
-  Category.travel: Icons.flight_takeoff_rounded,
-  Category.leisure: Icons.movie_rounded,
-  Category.work: Icons.work_rounded,
+  Cat.food: Icons.ramen_dining_rounded,
+  Cat.travel: Icons.flight_takeoff_rounded,
+  Cat.leisure: Icons.movie_rounded,
+  Cat.work: Icons.work_rounded,
 };
 
 class Expense {
@@ -28,7 +28,7 @@ class Expense {
   final String title;
   final double amount;
   final DateTime date;
-  final Category category;
+  final Cat category;
 
   String get formattedDate { //special getter method used in dart, so get is a special keyword.
     return formatter.format(date); //we call the formatter to view the date in a specific way
