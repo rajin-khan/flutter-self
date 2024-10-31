@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:expense_tracker/models/expense.dart';
 import 'package:intl/intl.dart';
@@ -8,7 +7,7 @@ final formatter = DateFormat.yMd();
 class NewExpense extends StatefulWidget {
   const NewExpense({super.key});
   @override
-  State<NewExpense> createState() {
+  State<NewExpense> createState() { 
     return _NewExpenseState();
   }
 }
