@@ -15,7 +15,7 @@ class Expenses extends StatefulWidget {
 class _ExpensesState extends State<Expenses> {
   final List<Expense> _registeredExpenses = [
     Expense(
-        title: 'Flutter Course',
+        title: 'Seminar Ticket',
         amount: 19.99,
         date: DateTime.now(),
         category: Cat.work),
@@ -28,6 +28,7 @@ class _ExpensesState extends State<Expenses> {
 
   void _openAddExpenseOverlay() {
     showModalBottomSheet(
+      isScrollControlled: true,
       context: context,
       builder: (ctx) => NewExpense(onAddExpense: _addExpense),
     ); //ctx is the same as context, we just used it to differentiate the two contexts.
@@ -39,11 +40,17 @@ class _ExpensesState extends State<Expenses> {
     });
   }
 
+  void _removeExpense(Expense expense) {
+    setState(() {
+      _registeredExpenses.remove(expense);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Rajin\'s Expense Tracker'),
+        title: const Text('Tapsense Financer Protoype'),
         actions: [
           IconButton(
             onPressed:
@@ -57,7 +64,7 @@ class _ExpensesState extends State<Expenses> {
           const Text('Chart'),
           Expanded(
             //the expanded widget must be used here we are trying to display a list (listview) inside another list (the column widget)
-            child: ExpensesList(expenses: _registeredExpenses),
+            child: ExpensesList(expenses: _registeredExpenses, onRemoveExpense: _removeExpense,),
           ),
         ],
       ),
