@@ -7,7 +7,7 @@ final formatter = DateFormat.yMd();
 class NewExpense extends StatefulWidget {
   const NewExpense({super.key});
   @override
-  State<NewExpense> createState() { 
+  State<NewExpense> createState() {
     return _NewExpenseState();
   }
 }
@@ -32,6 +32,33 @@ class _NewExpenseState extends State<NewExpense> {
     setState(() {
       _selectedDate = pickedDate;
     });
+  }
+
+  void _submitExpenseData() {
+    final enteredAmount = double.tryParse(_amountController
+        .text); //this method converts any string to nums if possible.
+    final amountIsInvalid = enteredAmount == null || enteredAmount <= 0;
+    if (_titleController.text.trim().isEmpty ||
+        amountIsInvalid ||
+        _selectedDate == null) {
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: const Text('Invalid input'),
+          content: const Text(
+              'Please make sure a valid title, amount, date and category was entered.'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text('Okay'),
+            ),
+          ],
+        ),
+      );
+      return;
+    }
   }
 
   @override
@@ -92,7 +119,7 @@ class _NewExpenseState extends State<NewExpense> {
           Row(
             children: [
               DropdownButton(
-                value: _selectedCategory,
+                  value: _selectedCategory,
                   items: Cat.values
                       .map(
                         (category) => DropdownMenuItem(
@@ -111,7 +138,7 @@ class _NewExpenseState extends State<NewExpense> {
                       _selectedCategory = value;
                     });
                   }),
-                  const Spacer(),
+              const Spacer(),
               TextButton(
                 onPressed: () {
                   Navigator.pop(
@@ -122,7 +149,7 @@ class _NewExpenseState extends State<NewExpense> {
               const Spacer(),
               ElevatedButton(
                 onPressed: () {
-                  print(_titleController.text);
+                  _submitExpenseData();
                   print(_amountController.text);
                 },
                 child: const Text('Save Expense'),
