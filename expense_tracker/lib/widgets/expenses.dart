@@ -41,13 +41,41 @@ class _ExpensesState extends State<Expenses> {
   }
 
   void _removeExpense(Expense expense) {
+    final expenseIndex = _registeredExpenses.indexOf(
+        expense); //here we save the index of the item being removed in case we want to bring it back later
     setState(() {
       _registeredExpenses.remove(expense);
     });
+    ScaffoldMessenger.of(context).clearSnackBars();
+    ScaffoldMessenger.of(context).showSnackBar(
+      //to have an info message appear when an item is removed
+      SnackBar(
+        duration: const Duration(seconds: 3),
+        content: const Text('Expense deleted.'),
+        action: SnackBarAction(
+          label: 'Undo', //the part that brings the item back
+          onPressed: () {
+            setState(() {
+              _registeredExpenses.insert(expenseIndex,
+                  expense); //instead of the add method, the insert method helps us add items at a specific index.
+            });
+          },
+        ),
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
+    Widget mainContent = const Center(
+      child: Text('No expenses found. Start adding some!'),
+    );
+    if (_registeredExpenses.isNotEmpty) {
+      mainContent = ExpensesList(
+        expenses: _registeredExpenses,
+        onRemoveExpense: _removeExpense,
+      );
+    }
     return Scaffold(
       appBar: AppBar(
         title: const Text('Tapsense Financer Protoype'),
@@ -64,7 +92,7 @@ class _ExpensesState extends State<Expenses> {
           const Text('Chart'),
           Expanded(
             //the expanded widget must be used here we are trying to display a list (listview) inside another list (the column widget)
-            child: ExpensesList(expenses: _registeredExpenses, onRemoveExpense: _removeExpense,),
+            child: mainContent,
           ),
         ],
       ),
