@@ -78,7 +78,7 @@ class _ExpensesState extends State<Expenses> {
     }
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Tapsense Financer Protoype'),
+        title: const Text('Rajin\'s Expense Tracker'),
         actions: [
           IconButton(
             onPressed:
