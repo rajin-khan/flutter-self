@@ -19,6 +19,10 @@ class ExpensesList extends StatelessWidget {
       itemCount: expenses.length,
       itemBuilder: (context, index) => Dismissible(
         key: ValueKey(expenses[index]),
+        background: Container(
+          color: Theme.of(context).colorScheme.error.withOpacity(0.5),
+          margin: EdgeInsets.symmetric(horizontal: Theme.of(context).cardTheme.margin!.horizontal), //get the horizontal margin data from cardTheme, it may be null, or dart thinks so, so exclamation mark added.
+        ), //to use theme color scheme anywhere
         onDismissed: (direction) {
           onRemoveExpense(expenses[index]);
         },

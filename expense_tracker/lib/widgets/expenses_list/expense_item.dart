@@ -16,8 +16,12 @@ class ExpenseItem extends StatelessWidget {
           vertical: 16,
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(expense.title),
+            Text(
+              expense.title,
+              style: Theme.of(context).textTheme.titleLarge, //to use theme color scheme anywhere
+            ),
             const SizedBox(height: 4),
             Row(
               children: [
@@ -28,7 +32,8 @@ class ExpenseItem extends StatelessWidget {
                   children: [
                     Icon(categoryIcons[expense.category]),
                     const SizedBox(width: 8),
-                    Text(expense.formattedDate) //since getter is a special method, you don't need to add parentheses here
+                    Text(expense
+                        .formattedDate) //since getter is a special method, you don't need to add parentheses here
                   ],
                 )
               ],
