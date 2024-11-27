@@ -30,7 +30,35 @@ class Expense {
   final DateTime date;
   final Cat category;
 
-  String get formattedDate { //special getter method used in dart, so get is a special keyword.
-    return formatter.format(date); //we call the formatter to view the date in a specific way
+  String get formattedDate {
+    //special getter method used in dart, so get is a special keyword.
+    return formatter.format(
+        date); //we call the formatter to view the date in a specific way
+  }
+}
+
+class ExpenseBucket {
+  const ExpenseBucket({
+    required this.category,
+    required this.expenses,
+  });
+
+  ExpenseBucket.forCategory(List<Expense> allExpenses, this.category)
+      : expenses = allExpenses
+            .where((expense) => expense.category == category)
+            .toList();
+
+  final Cat category;
+  final List<Expense> expenses;
+
+  double get totalExpenses {
+    double sum = 0;
+
+    for (final expense in expenses) {
+      //loop through each category and add them, used a for-in loop
+      sum += expense.amount;
+    }
+
+    return sum;
   }
 }
