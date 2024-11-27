@@ -9,24 +9,27 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final SpeechToText _speechToText = SpeechToText();
-  bool _speechEnabled = false;
-  String _wordsSpoken = "";
+  final SpeechToText _speechToText =
+      SpeechToText(); //creates speechtotext object
+  bool _speechEnabled = false; //bc it's not listening initially
+  String _wordsSpoken = ""; //wher we will store the spoken words
   double _confidenceLevel = 0;
 
   @override
   void initState() {
     super.initState();
-    initSpeech();
+    initSpeech(); //call the stt object initializer
   }
 
   void initSpeech() async {
-    _speechEnabled = await _speechToText.initialize();
+    _speechEnabled =
+        await _speechToText.initialize(); //we wait for it to initialize
     setState(() {});
   }
 
   void _startListening() async {
-    await _speechToText.listen(onResult: _onSpeechResult);
+    await _speechToText.listen(
+        onResult: _onSpeechResult); //as we listen, we show the confidence level
     setState(() {
       _confidenceLevel = 0;
     });
@@ -38,10 +41,12 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _onSpeechResult(result) {
+    //the method that stores the spoken words
     setState(() {
       _wordsSpoken = "${result.recognizedWords}";
       _confidenceLevel = result.confidence;
     });
+    //print(_wordsSpoken);
   }
 
   @override
@@ -62,9 +67,10 @@ class _HomePageState extends State<HomePage> {
             Container(
               padding: const EdgeInsets.all(20),
               child: Text(
-                _speechToText.isListening
+                _speechToText
+                        .isListening //ternary operator to show one thing if listening
                     ? "Listening..."
-                    : _speechEnabled
+                    : _speechEnabled //another nested ternary operator
                         ? "Tap the microphone to start listening..."
                         : "Speech not available",
                 style: const TextStyle(fontSize: 15),
@@ -74,7 +80,7 @@ class _HomePageState extends State<HomePage> {
               child: Container(
                 padding: const EdgeInsets.all(20),
                 child: Text(
-                  _wordsSpoken,
+                  _wordsSpoken, //this is where we show the words being recognized
                   style: const TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.w300,
@@ -82,13 +88,14 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            if (_speechToText.isNotListening && _confidenceLevel > 0)
+            if (_speechToText.isNotListening &&
+                _confidenceLevel > 0) //if it is ready to listen
               Padding(
                 padding: const EdgeInsets.only(
-                  bottom: 100,
+                  bottom: 200,
                 ),
                 child: Text(
-                  "Confidence: ${(_confidenceLevel * 100).toStringAsFixed(1)}%",
+                  "Confidence: ${(_confidenceLevel * 100).toStringAsFixed(1)}%", //we display the confidence
                   style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.w200,
