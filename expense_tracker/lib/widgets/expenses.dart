@@ -103,6 +103,7 @@ class _ExpensesState extends State<Expenses> {
             )
           : Row(
               children: [
+                Padding(padding: EdgeInsets.all(25)),
                 Expanded(
                   child: Chart(expenses: _registeredExpenses),
                 ),
@@ -110,6 +111,7 @@ class _ExpensesState extends State<Expenses> {
                   //the expanded widget must be used here we are trying to display a list (listview) inside another list (the column widget)
                   child: mainContent,
                 ),
+                Padding(padding: EdgeInsets.all(25)),
               ],
             ),
     );
