@@ -1,8 +1,10 @@
+<p align="center">
+    <a href="https://flutter.dev/" target="_blank" rel="noreferrer"> <img src="https://storage.googleapis.com/cms-storage-bucket/6e19fee6b47b36ca613f.png" alt="Flutter" height="100"/></a>
+</p>
+
 <h1 align="center"> Flutter Learning Repository</h1>
 
 ---
-
-![Profile banner](https://i.imgur.com/ygFxqFu.png)
 
 <h6 align="center">This repository is part of a <a href="https://github.com/rajin-khan/capstone-sem-8" target="_blank" rel="noreferrer">bigger project</a>, with a fixed time frame to learn mobile app development with Flutter.</h6>
 
@@ -82,11 +84,11 @@ The repository is organized in terms of the apps created while learning the core
 | Week         | Modules Completed  | Key Concepts Covered                           |
 |--------------|--------------------|-----------------------------------------------|
 | Week 1       | 1–2                | Dart basics, Stateless/Stateful Widgets        |
-| Week 1       | 3–4                | State management, UI Components, Navigation   |
-| Week 2       | 5–6                | Data handling, APIs, JSON parsing             |
+| Week 2       | 3–4                | State management, UI Components, Navigation   |
+| Week 3       | 5–6                | Data handling, APIs, JSON parsing             |
 | Week 2       | 7–8                | Firebase integration, User authentication     |
-| Week 3       | 9–10               | Advanced navigation, Flutter animations       |
-| Week 3       | Final Project      | App development, testing, deployment          |
+| Week 4       | 9–10               | Advanced navigation, Flutter animations       |
+| Week 5       | Final Project      | App development, testing, deployment          |
 
 ## Modules Completed:
 
@@ -94,8 +96,8 @@ The repository is organized in terms of the apps created while learning the core
 - [X] Flutter & Dart Basics I - Getting a Solid Foundation [DICE ROLLER APP]
 - [X] Flutter & Dart Basics II - Fundamentals Deep Dive [QUIZ APP]
 - [X] Debugging Flutter Apps
-- [ ] Adding Interactivity, More Widgets & Theming [EXPENSE TRACKER APP]
-- [ ] Building Responsive & Adaptive User Interfaces [EXPENSE TRACKER APP]
+- [X] Adding Interactivity, More Widgets & Theming [EXPENSE TRACKER APP]
+- [X] Building Responsive & Adaptive User Interfaces [EXPENSE TRACKER APP]
 - [ ] Flutter & Dart Internals [TODO APP]
 - [ ] Building Multi-Screen Apps & Navigating Between Screens [MEALS APP]
 - [ ] Managing App-wide State [MEALS APP]
