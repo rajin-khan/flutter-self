@@ -98,7 +98,7 @@ The repository is organized in terms of the apps created while learning the core
 - [X] Debugging Flutter Apps
 - [X] Adding Interactivity, More Widgets & Theming [EXPENSE TRACKER APP]
 - [X] Building Responsive & Adaptive User Interfaces [EXPENSE TRACKER APP]
-- [ ] Flutter & Dart Internals [TODO APP]
+- [X] Flutter & Dart Internals [TODO APP]
 - [ ] Building Multi-Screen Apps & Navigating Between Screens [MEALS APP]
 - [ ] Managing App-wide State [MEALS APP]
 - [ ] Adding Animations [MEALS APP]
