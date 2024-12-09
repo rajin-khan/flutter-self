@@ -7,14 +7,17 @@ class MealItem extends StatelessWidget {
   const MealItem({
     super.key,
     required this.meal,
+    required this.onSelectMeal,
   });
 
   final Meal meal;
+  final Function(Meal meal) onSelectMeal;
 
   String get complexityText {
     return meal.complexity.name[0].toUpperCase() +
         meal.complexity.name.substring(1);
   }
+
   String get affordabilityText {
     return meal.affordability.name[0].toUpperCase() +
         meal.affordability.name.substring(1);
@@ -31,7 +34,9 @@ class MealItem extends StatelessWidget {
           .hardEdge, //as child widgets like Stack may ignore parent widget constraints, making the border not circular, this ensure that the widget itself does not exist beyond the area allotted by the card, so that Stack has to listen to the constraints.
       elevation: 2,
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          onSelectMeal(meal);
+        },
         child: Stack(
           //last added item is on top
           children: [
