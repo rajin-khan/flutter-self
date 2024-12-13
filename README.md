@@ -99,7 +99,7 @@ The repository is organized in terms of the apps created while learning the core
 - [X] Adding Interactivity, More Widgets & Theming [EXPENSE TRACKER APP]
 - [X] Building Responsive & Adaptive User Interfaces [EXPENSE TRACKER APP]
 - [X] Flutter & Dart Internals [TODO APP]
-- [ ] Building Multi-Screen Apps & Navigating Between Screens [MEALS APP]
+- [x] Building Multi-Screen Apps & Navigating Between Screens [MEALS APP]
 - [ ] Managing App-wide State [MEALS APP]
 - [ ] Adding Animations [MEALS APP]
 - [ ] Handling User Input & Working with Forms [SHOPPING LIST APP]
