@@ -109,3 +109,6 @@ The repository is organized in terms of the apps created while learning the core
 - [ ] Next Steps & Roundup
 ---
 
+#### A dev quote for you:
+
+[![Readme Quotes](https://quotes-github-readme.vercel.app/api?border=truel&type=horizontal&theme=nord)](https://github.com/piyushsuthar/github-readme-quotes)
